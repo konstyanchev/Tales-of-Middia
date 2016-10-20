@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace HoMM
+namespace ToM
 {
+	public enum MapSize
+	{
+		ExtraSmall = 32,
+		Small = 48,
+		Normal = 72,
+		Large = 96,
+		ExtraLarge = 128,
+		Gigantic = 192,
+	}
+
+	[System.Serializable]
 	public class Map
 	{
 		public MapSize size = MapSize.Small;
 		public int Diameter { get { return (int)this.size; } }
 
-		public string mapName = "Test Map";
-		public string description = "A map for testing purposes";
+		public string mapName = "Default Map";
+		public string description = "Enter your map description here";
 
 		[Range(1,8)]
 		public int numberOfPlayers = 1;

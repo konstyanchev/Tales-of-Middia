@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace HoMM
+namespace ToM
 {
 	public class PositionSquare : MonoBehaviour
 	{

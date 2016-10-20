@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace HoMM
+namespace ToM
 {
 	public class MapMovement : MonoBehaviour
 	{
@@ -91,6 +91,14 @@ namespace HoMM
 				this.currentDestination = destination;
 				this.RequestPath();
 			}
+		}
+
+		protected void OnDrawGizmos()
+		{
+			Gizmos.DrawLine(this.transform.position, this.transform.position + (Vector3.up * this.mapHero.hero.sight));
+			Gizmos.DrawLine(this.transform.position, this.transform.position + (Vector3.down * this.mapHero.hero.sight));
+			Gizmos.DrawLine(this.transform.position, this.transform.position + (Vector3.left * this.mapHero.hero.sight));
+			Gizmos.DrawLine(this.transform.position, this.transform.position + (Vector3.right * this.mapHero.hero.sight));
 		}
 
 	}

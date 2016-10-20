@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HoMM
+namespace ToM
 {
 	[Serializable]
 	public class Tuple<T1, T2>

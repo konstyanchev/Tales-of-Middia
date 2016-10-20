@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace HoMM
+namespace ToM
 {
 	public class MapCastle : InteractableMapObject
 	{

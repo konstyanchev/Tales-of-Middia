@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace HoMM
+﻿namespace ToM
 {
 
 
@@ -39,9 +36,6 @@ namespace HoMM
 //Items
 //Spells
 //Slots(runtime)
-
-
-
 	}
 }
 

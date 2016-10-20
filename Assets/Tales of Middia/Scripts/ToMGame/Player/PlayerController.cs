@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using ModularInput;
 
-namespace HoMM
+namespace ToM
 {
 	public class PlayerController : MonoBehaviour
 	{

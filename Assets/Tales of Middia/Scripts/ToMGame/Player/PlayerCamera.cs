@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-namespace HoMM
+namespace ToM
 {
 	public class PlayerCamera : MonoBehaviour
 	{
 		private Tile currentTile;
 		private Camera mapCamera;
 		private Player player;
-		private float mapScrollSpeed = 2F; // TODO: part of gamesettings
+		private float mapScrollSpeed;
 
 
 		protected void Awake()
 		{
 			this.mapCamera = this.GetComponent<Camera>();
 			this.player = this.GetComponent<Player>();
+			this.mapScrollSpeed = GameSettings.Instance.gampeplay.mapScrollSpeed;
 		}
 
 		protected void Update()

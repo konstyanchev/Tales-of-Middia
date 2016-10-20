@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace HoMM
+namespace ToM
 {
 	//Temporal while an editor is coded
 	[System.Serializable]

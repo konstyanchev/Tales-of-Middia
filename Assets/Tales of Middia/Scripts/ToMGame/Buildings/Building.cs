@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HoMM
+namespace ToM
 {
 	[System.Serializable]
 	public class Building

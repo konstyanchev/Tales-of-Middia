@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace HoMM
+namespace ToM
 {
 	public class GameManager : MonoBehaviour
 	{

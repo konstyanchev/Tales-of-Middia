@@ -3,20 +3,12 @@ using System.Collections.Generic;
 using System;
 using System.Collections;
 using UnityEngine.Events;
+using System.Text;
+using System.IO;
 
-namespace HoMM
+namespace ToM
 {
-	public enum MapSize
-	{
-		ExtraSmall	= 32,
-		Small		= 48,
-		Normal		= 72,
-		Large		= 96,
-		ExtraLarge	= 128,
-		Gigantic	= 192,
-	}
-
-	public class MapCreator : MonoBehaviour
+	public class MapManager : MonoBehaviour
 	{
 		public UnityEvent OnMapCreated;
 
@@ -30,7 +22,7 @@ namespace HoMM
 		private GameObject[] resourcesPrefabs;
 		private GameObject[] creaturePrefabs;
 		private GameObject[] buildingPrefabs;
-
+		private GameObject[] itemPrefabs;
 
 		protected void Awake()
 		{
@@ -42,13 +34,14 @@ namespace HoMM
 
 		private IEnumerator LoadGameAssets()
 		{
-			this.tilePrefabs = Resources.LoadAll<GameObject>("Tiles");
-			this.pawnPrefabs = Resources.LoadAll<GameObject>("PlayerPawns");
-			this.sceneryPrefabs = Resources.LoadAll<GameObject>("Scenery");
-			this.resourcesPrefabs = Resources.LoadAll<GameObject>("MapResources");
-			this.creaturePrefabs = Resources.LoadAll<GameObject>("Creatures");
-			this.buildingPrefabs = Resources.LoadAll<GameObject>("Buildings");
-			this.castlePrefabs = Resources.LoadAll<GameObject>("Castles");
+			this.tilePrefabs		= Resources.LoadAll<GameObject>("Tiles");
+			this.pawnPrefabs		= Resources.LoadAll<GameObject>("PlayerPawns");
+			this.sceneryPrefabs		= Resources.LoadAll<GameObject>("Scenery");
+			this.resourcesPrefabs	= Resources.LoadAll<GameObject>("MapResources");
+			this.creaturePrefabs	= Resources.LoadAll<GameObject>("Creatures");
+			this.buildingPrefabs	= Resources.LoadAll<GameObject>("Buildings");
+			this.castlePrefabs		= Resources.LoadAll<GameObject>("Castles");
+			//this.itemPrefabs		= Resources.LoadAll<GameObject>("Items");
 			yield return null;
 		}
 
@@ -134,9 +127,34 @@ namespace HoMM
 			this.OnMapCreated.Invoke();
 		}
 
-		private IEnumerator CreateMap(MapSaveData rawData)
+		private IEnumerator LoadMap(MapSaveData rawData)
 		{
 			yield return null;
+		}
+
+		private void SaveMap()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.AppendLine(this.currentMap.mapName);
+			sb.AppendLine();
+			sb.AppendLine(this.currentMap.size.ToString());
+
+
+			foreach (var tile in this.currentMap.tiles)
+				this.SerializeTile(sb, tile);
+		}
+
+		private void SaveMap(string content)
+		{
+			string path = GameSettings.Instance.miscSettings.ToMMapsFolder + this.currentMap.mapName;
+
+			File.WriteAllText(path, content);
+		}
+
+		private void SerializeTile(StringBuilder sb, Tile tile)
+		{
+			//sb.Append("Tile=")
 		}
 	}
 }

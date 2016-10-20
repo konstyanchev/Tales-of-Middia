@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-namespace HoMM
+namespace ToM
 {
 	public class CreatureDialog : MonoBehaviour
 	{

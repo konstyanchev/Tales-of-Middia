@@ -1,4 +1,4 @@
-﻿namespace HoMM
+﻿namespace ToM
 {
 	[System.Serializable]
 	public class Castle

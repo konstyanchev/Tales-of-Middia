@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace HoMM
+namespace ToM
 {
 	[Serializable]
 	public struct TilePositon
@@ -27,23 +27,24 @@ namespace HoMM
 		public bool traversable;
 		public bool interactable;
 		public TilePositon position;
-		SpriteRenderer renderer;
-
+		public TerrainType terrain;
 		public Action<Hero> interaction;
+
+		private SpriteRenderer renderer;
+
+		#region pathfinding
 		public Tile parent;
-
-
 		public int gCost;
 		public int hCost;
 		public int fCost { get { return this.gCost + this.hCost; } }
-
-		int heapIndex;
 
 		public int HeapIndex
 		{
 			get	{ return heapIndex;	}
 			set	{this.heapIndex = value; }
 		}
+		private int heapIndex;
+		#endregion
 
 		public Tile(Vector2 pos, bool visible, bool traversable, SpriteRenderer renderer)
 		{

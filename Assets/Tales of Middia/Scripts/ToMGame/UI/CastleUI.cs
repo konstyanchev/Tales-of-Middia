@@ -2,7 +2,7 @@
 using ModularInput;
 using UnityEngine.UI;
 
-namespace HoMM
+namespace ToM
 {
 	public class CastleUI : MonoBehaviour
 	{

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace HoMM
+namespace ToM
 {
 	public enum Team
 	{
@@ -44,5 +44,18 @@ namespace HoMM
 		Neutral		= 50,
 		Hostile		= 25,
 		Savage		= 0,
+	}
+
+	public enum TerrainType
+	{
+		Void = 0,
+		Water = 1,
+		Grass = 2,
+		Swamp = 3,
+		Snow = 4,
+		Sand = 5,
+		Lava = 6,
+		Rocks = 7,
+		Subterran = 8,
 	}
 }

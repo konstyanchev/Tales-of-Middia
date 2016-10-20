@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace HoMM
+namespace ToM
 {
 	public static class MapUtility
 	{

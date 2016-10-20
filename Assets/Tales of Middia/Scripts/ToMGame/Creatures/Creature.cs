@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-namespace HoMM
+namespace ToM
 {
 	[Serializable]
 	public class Creature
